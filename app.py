@@ -34,8 +34,8 @@ input_scaled = scaler.transform(input_data)
 
 # Predict
 if stm.button("Predict Survival"):
-    prediction = model.predict(features)[0]
-    probability = model.predict_proba(features)[0][1]
+    prediction = model.predict(input_data)[0]
+    probability = model.predict_proba(input_data)[0][1]
     
     if prediction == 1:
         stm.success(f"The passenger is likely to **SURVIVE**  (Probability: {probability:.2%})")
